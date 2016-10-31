@@ -40,6 +40,7 @@ public class Main {
             ex.printStackTrace();
         }
 
+        // finish class code
         code += "\t\treturn field;\n\t}\n}\n";
 
         // write code to a .java file

@@ -36,6 +36,20 @@ public class PlayFieldCreator {
 		field[4][4] = 0;
 		field[4][5] = 0;
 		field[4][6] = 0;
+		field[5][0] = 0;
+		field[5][1] = 0;
+		field[5][2] = 0;
+		field[5][3] = 0;
+		field[5][4] = 0;
+		field[5][5] = 0;
+		field[5][6] = 0;
+		field[6][0] = 0;
+		field[6][1] = 0;
+		field[6][2] = 0;
+		field[6][3] = 0;
+		field[6][4] = 0;
+		field[6][5] = 0;
+		field[6][6] = 0;
 		return field;
 	}
 }
