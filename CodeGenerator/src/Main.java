@@ -21,19 +21,24 @@ public class Main {
             int i = 0;
             String line;
             while ((line = in.readLine()) != null) {
-                if (i >= 7) break;
+                if(line.length() != 7) {
+                    throw new IOException("Das Spielfeld enthält eine Zeile mit nicht genau 7, sondern " + line.length() + " Spalten");
+                }
 
                 int j = 0;
                 String[] row = line.split("");
                 for(String entry : row) {
-                    if (j >= 7) break;
-
+                    if (!entry.equals("0") && !entry.equals("1")) {
+                        throw new IOException("Das Spielfeld enthält ungültige Zeichen: " + entry);
+                    }
                     code += "\t\tfield["+i+"]["+j+"] = " + entry + ";\n";
                     j++;
                 }
                 i++;
             }
-
+            if(i != 7) {
+                throw new IOException("Das Spielfelds enthält nicht genau 7, sondern " + i + " Zeilen");
+            }
             in.close();
         }
         catch (IOException ex) {
@@ -48,6 +53,7 @@ public class Main {
             FileWriter out = new FileWriter("../Battleship/src/PlayFieldCreator.java", false);
             out.write(code);
             out.close();
+            System.out.println("PlayFieldCreator.java wurde erstellt");
         }
         catch (IOException ex) {
             ex.printStackTrace();
