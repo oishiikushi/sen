@@ -31,7 +31,7 @@ public class KIGenerator extends KIBaseListener {
                 cells.add(rowCoords.charAt(i) + Integer.toString(j+1));
     }
 
-    public static void main(String[] args) throws FileNotFoundException, IOException { // Get CSV lexer
+    public static void main(String[] args) throws FileNotFoundException, IOException {
 
         // Get a list of matched tokens
         KILexer lexer = new KILexer(new ANTLRInputStream(new FileReader("csv_files/KI.csv")));
