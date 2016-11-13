@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Main {
+public class CodeGenerator {
 
     public static void main(String[] args) {
 
@@ -11,8 +11,6 @@ public class Main {
         String code = "public class PlayFieldCreator {\n" +
                 "\tpublic static int [][] createPlayField() {\n" +
                 "\t\tint[][] field = new int[7][7];\n";
-
-        int[][] field = new int[7][7];
 
         // generate code dependent on file content
         try {
