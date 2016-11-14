@@ -58,6 +58,7 @@ public class Game {
 
         if (playfield[row][column] == 1) {
             System.out.println("Treffer");
+            playfield[row][column] = 0; // prevent cheating
             hitsPlayer++;
 
             if (hitsPlayer == 14) {
