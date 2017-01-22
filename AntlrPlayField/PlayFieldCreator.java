@@ -1,7 +1,7 @@
 public class PlayFieldCreator {
 	public static int [][] createPlayField() {
 		int[][] field = new int[7][7];
-		field[0][0] = 0;
+		field[0][0] = 1;
 		field[0][1] = 0;
 		field[0][2] = 1;
 		field[0][3] = 1;

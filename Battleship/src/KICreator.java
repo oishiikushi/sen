@@ -46,10 +46,10 @@ public class KICreator {
 		instructions[42] = "G1";
 		instructions[43] = "G2";
 		instructions[44] = "G3";
-		instructions[45] = "G4";
-		instructions[46] = "G5";
-		instructions[47] = "G6";
-		instructions[48] = "G7";
+		instructions[45] = "G5";
+		instructions[46] = "G7";
+		instructions[47] = "G4";
+		instructions[48] = "G6";
 		return instructions;
 	}
 }

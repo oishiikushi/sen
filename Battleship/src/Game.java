@@ -35,6 +35,10 @@ public class Game {
 
             if (playerTurn) {
                 round++;
+                if (round == 50) {
+                    System.out.println("Das Spiel ist zuende: Du hast "+ hitsPlayer +" Treffer und der Computer "+ hitsComputer +".");
+                    break;
+                }
                 turnPlayer();
             }
             else
