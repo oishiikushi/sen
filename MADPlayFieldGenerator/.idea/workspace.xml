@@ -56,14 +56,14 @@
       <file leaf-file-name="PlayFieldSemanticListener.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PlayFieldSemanticListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+            <state relative-caret-position="409">
+              <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#15110#15111#0" expanded="true" />
-                <element signature="e#15131#15132#0" expanded="true" />
-                <element signature="e#15200#15201#0" expanded="true" />
-                <element signature="e#15249#15250#0" expanded="true" />
+                <element signature="e#15646#15647#0" expanded="true" />
+                <element signature="e#15667#15668#0" expanded="true" />
+                <element signature="e#15736#15737#0" expanded="true" />
+                <element signature="e#15785#15786#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -547,7 +547,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="23" width="1440" height="836" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -706,14 +706,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PlayFieldSemanticListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+        <state relative-caret-position="409">
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#15110#15111#0" expanded="true" />
-            <element signature="e#15131#15132#0" expanded="true" />
-            <element signature="e#15200#15201#0" expanded="true" />
-            <element signature="e#15249#15250#0" expanded="true" />
+            <element signature="e#15646#15647#0" expanded="true" />
+            <element signature="e#15667#15668#0" expanded="true" />
+            <element signature="e#15736#15737#0" expanded="true" />
+            <element signature="e#15785#15786#0" expanded="true" />
           </folding>
         </state>
       </provider>

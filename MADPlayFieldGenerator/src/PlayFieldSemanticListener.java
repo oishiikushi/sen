@@ -52,9 +52,18 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
                 "import com.company.model.Tile;\n" +
                 "public class GEN_PlayfieldCreator {\n" +
                 // generate getters
-                "public static void getNumPlayers() { return "+ this.numPlayers +";}" +
-                "public static void getNumPiecesPerPlayer() { return "+ this.numPiecesPerPlayer +";}" +
-                //
+                "public static int getNumRows() { return "+ this.numRows +";}" +
+                "public static int getNumColumns() { return "+ this.numColumns +";}" +
+                "public static int getNumPlayers() { return "+ this.numPlayers +";}" +
+                "public static int getNumPiecesPerPlayer(int id) { if (id <= "+ numPlayers +") {" +
+
+                "switch (id) {" +
+                "case 1: return "+ numPiecesPerPlayer[0] +";" +
+                "case 2: return "+ numPiecesPerPlayer[1] +";" +
+                "case 3: return "+ numPiecesPerPlayer[2] +";" +
+                "case 4: return "+ numPiecesPerPlayer[3] +";" +
+                "}}else throw new Error(\"player doesnt exist\");}" +
+                // the big guy
                 "\tpublic static void createPlayfield(Playfield playfield) {\n" +
                 "int sizex = "+ numColumns +";" +
                 "int sizey = "+ numRows +";" +

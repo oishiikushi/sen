@@ -4,7 +4,7 @@ import com.company.model.Playfield;
 import com.company.model.TileType;
 import com.company.model.Tile;
 public class GEN_PlayfieldCreator {
-	public static void createPlayfield(Playfield playfield) {
+public static int getNumPlayers() { return 4;}public static int getNumPiecesPerPlayer(int id) { if (id <= 4) {switch (id) {case 1: return 4;case 2: return 4;case 3: return 4case 4: return 4;}}else throw new Error("player doesnt exist");}	public static void createPlayfield(Playfield playfield) {
 int sizex = 11;int sizey = 11;playfield.setupTiles(sizex, sizey);
 playfield.setTile(0, 0, new Tile());playfield.getTile(0, 0).setType(TileType.HOME).setPlayerID(1);
 playfield.setTile(0, 1, new Tile());playfield.getTile(0, 1).setType(TileType.HOME).setPlayerID(1);
