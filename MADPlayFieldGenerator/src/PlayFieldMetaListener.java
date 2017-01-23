@@ -18,14 +18,17 @@ public class PlayFieldMetaListener extends PlayFieldBaseListener {
 
     private ArrayList<ArrayList<String>> playfield;
     private ArrayList<ArrayList<String>> players;
+    private int numPiecesPerPlayer[];
 
 
     private void throwError(String what, String info) throws Error {
         // dont befuddle the main code with string deserts
         switch (what) {
-            case "ROWS": throw new Error("row differs in size to preceding row");
-            case "INVALID_PLAYER": throw new Error("invalid player" + info + " found");
-            case "DUPLICATE_START": throw new Error("player"+ info +" has duplicate start field");
+            case "ROWS"             : throw new Error("row differs in size to preceding row");
+            case "INVALID_PLAYER"   : throw new Error("invalid player" + info + " found");
+            case "DUPLICATE_START"  : throw new Error("player"+ info +" has duplicate start field");
+            case "TOO_LESS_PLAYERS" : throw new Error("not enough players defined, just "+ info);
+            case "NO_PLAYER_PIECES" : throw new Error("player "+ info +" has no pieces");
             default:
                 throw new Error(what);
         }
@@ -113,8 +116,29 @@ public class PlayFieldMetaListener extends PlayFieldBaseListener {
                 throwError("INVALID_PLAYER", "" + i);
         }
 
+        numPiecesPerPlayer = new int[numPlayers];
+        for (int i=0; i<numPlayers; i++) {
+            numPiecesPerPlayer[i] = countHomeFields(players.get(i));
+        }
+        for (int i=0; i<numPlayers; i++) {
+            if (numPiecesPerPlayer[i] == 0)
+                throwError("NO_PLAYER_PIECES", "" + i);
+        }
+
+        if (numPlayers < 2)
+            throwError("TOO_LESS_PLAYERS", "" + numPlayers);
+
         System.out.println("If no error outputs occurred, then the following file has valid format:");
         System.out.println(ctx.getText());
+    }
+
+    private int countHomeFields(ArrayList<String> player) {
+        int num = 0;
+        for (int i=0; i<player.size(); i++)
+            if (player.get(i).equals("H"))
+                num++;
+
+        return num;
     }
 
     private boolean hasStartField(int playerNumber) {
@@ -150,6 +174,10 @@ public class PlayFieldMetaListener extends PlayFieldBaseListener {
 
     public int getNumPlayers() {
         return numPlayers;
+    }
+
+    public int[] getNumPiecesPerPlayer() {
+        return numPiecesPerPlayer;
     }
 
     public ArrayList<ArrayList<String>> getPlayfield() {

@@ -15,9 +15,12 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
     private int column  = -1;
     private String code = "";
 
+    private ArrayList<ArrayList<String>> playfield = null;
     private int numRows    = -1;
     private int numColumns = -1;
-    private ArrayList<ArrayList<String>> playfield = null;
+    private int numPlayers = 0;
+    private int[] numPiecesPerPlayer = null;
+
 
     private String generatedFileName = "gen/GEN_PlayfieldCreator";
 
@@ -26,6 +29,8 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
         this.playfield  = metaListener.getPlayfield();
         this.numRows    = metaListener.getNumRows();
         this.numColumns = metaListener.getNumColumns();
+        this.numPlayers = metaListener.getNumPlayers();
+        this.numPiecesPerPlayer = metaListener.getNumPiecesPerPlayer();
     }
 
     private void throwError(String what, String info) throws Error {
@@ -46,6 +51,10 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
                 "import com.company.model.TileType;\n" +
                 "import com.company.model.Tile;\n" +
                 "public class GEN_PlayfieldCreator {\n" +
+                // generate getters
+                "public static void getNumPlayers() { return "+ this.numPlayers +";}" +
+                "public static void getNumPiecesPerPlayer() { return "+ this.numPiecesPerPlayer +";}" +
+                //
                 "\tpublic static void createPlayfield(Playfield playfield) {\n" +
                 "int sizex = "+ numColumns +";" +
                 "int sizey = "+ numRows +";" +
