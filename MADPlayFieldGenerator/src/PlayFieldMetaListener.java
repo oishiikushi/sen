@@ -1,9 +1,5 @@
 import java.util.ArrayList;
 
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.tree.*;
-
-// Main = CodeGenerator with antlr classes
 public class PlayFieldMetaListener extends PlayFieldBaseListener {
 
     // to be filled
