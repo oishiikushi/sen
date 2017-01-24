@@ -62,12 +62,10 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
                 "case 2: return "+ numPiecesPerPlayer[1] +";" +
                 "case 3: return "+ numPiecesPerPlayer[2] +";" +
                 "case 4: return "+ numPiecesPerPlayer[3] +";" +
-                "}}else throw new Error(\"player doesnt exist\");}" +
+                "}}else throw new Error(\"player doesnt exist\");return -1;}" +
                 // the big guy
                 "\tpublic static void createPlayfield(Playfield playfield) {\n" +
-                "int sizex = "+ numColumns +";" +
-                "int sizey = "+ numRows +";" +
-                "playfield.setupTiles(sizex, sizey);\n";
+                "playfield.setupTiles();\n";
     }
 
     @Override public void enterValue(PlayFieldParser.ValueContext ctx) {
