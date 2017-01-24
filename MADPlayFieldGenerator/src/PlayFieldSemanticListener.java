@@ -396,7 +396,6 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
     }
 
     private void writeFirstTileCode(int x, int y, String type) {
-        code += "playfield.setTile(" + x + ", " + y + ", new Tile());";
         code += "playfield.getTile(" + x + ", " + y + ")";
         code += ".setType(TileType."+type+")";
     }
