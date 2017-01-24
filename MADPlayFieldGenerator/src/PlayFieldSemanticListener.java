@@ -374,7 +374,7 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
     }
 
     private boolean nextWayTileValid(int x, int y, String direction) {
-        if (x < 0 || x >= numColumns)
+        if (x < 0 || x >= numRows)
             throwError("OUT_OF_PLAYFIELD", "(" +x+", "+y+")");
         if (y < 0 || y >= numColumns)
             throwError("OUT_OF_PLAYFIELD", "(" +x+", "+y+")");
@@ -385,7 +385,7 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
     }
 
     private boolean nextGoalTileValid(int x, int y, String direction) {
-        if (x < 0 || x >= numColumns)
+        if (x < 0 || x >= numRows)
             throwError("OUT_OF_PLAYFIELD", "(" +x+", "+y+")");
         if (y < 0 || y >= numColumns)
             throwError("OUT_OF_PLAYFIELD", "(" +x+", "+y+")");
