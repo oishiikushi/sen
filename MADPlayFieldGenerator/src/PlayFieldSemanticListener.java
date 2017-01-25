@@ -138,6 +138,7 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
             case "G2W":
             case "G3W":
             case "G4W":
+                System.out.println(fieldValue);
                 writeFirstTileCode(row, column, "GOAL");
                 if (nextGoalTileValid(row, column-1, "" + fieldValue.charAt(1))) {
                     code += ".setNext(playfield.getTile(" + row + ", " + (column-1) + "))";

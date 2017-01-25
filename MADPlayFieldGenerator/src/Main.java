@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException { // Get CSV lexer
 
         // Get a list of matched tokens
-        PlayFieldLexer lexer = new PlayFieldLexer(new ANTLRInputStream(new FileReader("csv_files/playfield3.csv")));
+        PlayFieldLexer lexer = new PlayFieldLexer(new ANTLRInputStream(new FileReader("csv_files/playfield4.csv")));
         // Pass the tokens to the parser
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         PlayFieldParser parser = new PlayFieldParser(tokens);
