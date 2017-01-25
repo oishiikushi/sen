@@ -50,13 +50,11 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
                 "public static int getNumColumns() { return "+ this.numColumns +";}" +
                 "public static int getNumPlayers() { return "+ this.numPlayers +";}" +
                 "public static int getNumPiecesPerPlayer(int id) { if (id <= "+ numPlayers +") {" +
-
-                "switch (id) {" +
-                "case 1: return "+ numPiecesPerPlayer[0] +";" +
-                "case 2: return "+ numPiecesPerPlayer[1] +";" +
-                "case 3: return "+ numPiecesPerPlayer[2] +";" +
-                "case 4: return "+ numPiecesPerPlayer[3] +";" +
-                "}}else throw new Error(\"player doesnt exist\");return -1;}" +
+                "switch (id) {";
+                for (int i=0; i<numPlayers; i++) {
+                    code +=  "case "+ (i+1) +": return "+ numPiecesPerPlayer[i] +";";
+                }
+                code += "}}else throw new Error(\"player doesnt exist\");return -1;}" +
                 // the big guy
                 "\tpublic static void createPlayfield(Playfield playfield) {\n" +
                 "playfield.setupTiles();\n";
