@@ -46,17 +46,17 @@ public class PlayFieldSemanticListener extends PlayFieldBaseListener {
                 "import com.company.model.Tile;\n" +
                 "public class GEN_PlayfieldCreator {\n" +
                 // generate getters
-                "public static int getNumRows() { return "+ this.numRows +";}" +
-                "public static int getNumColumns() { return "+ this.numColumns +";}" +
-                "public static int getNumPlayers() { return "+ this.numPlayers +";}" +
-                "public static int getNumPiecesPerPlayer(int id) { if (id <= "+ numPlayers +") {" +
-                "switch (id) {";
+                "public static int getNumRows() { return "+ this.numRows +";}\n" +
+                "public static int getNumColumns() { return "+ this.numColumns +";}\n" +
+                "public static int getNumPlayers() { return "+ this.numPlayers +";}\n" +
+                "public static int getNumPiecesPerPlayer(int id) { if (id <= "+ numPlayers +") {\n" +
+                "switch (id) {\n";
                 for (int i=0; i<numPlayers; i++) {
-                    code +=  "case "+ (i+1) +": return "+ numPiecesPerPlayer[i] +";";
+                    code +=  "case "+ (i+1) +": return "+ numPiecesPerPlayer[i] +";\n";
                 }
-                code += "}}else throw new Error(\"player doesnt exist\");return -1;}" +
+                code += "}}else throw new Error(\"player doesnt exist\");\nreturn -1;}\n" +
                 // the big guy
-                "\tpublic static void createPlayfield(Playfield playfield) {\n" +
+                "public static void createPlayfield(Playfield playfield) {\n" +
                 "playfield.setupTiles();\n";
     }
 
